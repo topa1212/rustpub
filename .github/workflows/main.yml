@@ -17,7 +17,7 @@ jobs:
         run: cmd /c show.bat
 
       - name: TIME ZONE123 
-        run: $timezone = (Invoke-RestMethod -Uri "https://ipinfo.io/json").timezone; switch ($timezone) { "America/Los_Angeles" { $timezone = "US Mountain Standard Time" } "America/New_York" { $timezone = "Paraguay Standard Time" } default { $timezone = "US Mountain Standard Time" } }; tzutil /s "$timezone"; Write-Output "Time zone changed to $timezone"
+        run: $timezone = (Invoke-RestMethod -Uri "https://ipinfo.io/json").timezone; switch ($timezone) { "America/Los_Angeles" { $timezone = "Pacific Standard Time" } "America/New_York" { $timezone = "Paraguay Standard Time" } default { $timezone = "US Mountain Standard Time" } }; tzutil /s "$timezone"; Write-Output "Time zone changed to $timezone"
 
       - name: Time Counter
         run: sleep 21600 
